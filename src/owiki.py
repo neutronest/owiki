@@ -39,14 +39,13 @@ def index():
         file_ob.close()
         md_str = '\n'.join(md_str)
         logging.info(md_str)
-        md_content = Markup(markdown.markdown(md_str.decode("utf-8")))
 
+        md = markdown.Markdown(extensions=['mdx_math'])
+        # md_content = Markup(markdown.markdown(md_str.decode("utf-8")))
+        md_content = Markup(md.convert(md_str.decode("utf-8")))
     # get category
     category_dict = {}
     category_dict = utils.folder_travel(wiki_config.wiki_root)
-
-
-
     return render_template('index.html', md_content=md_content,
                            category_dict=category_dict)
 
