@@ -4,9 +4,21 @@
     <meta charset="utf-8">
     <title>owiki: such a little-weight wiki content</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="static/superhero/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="static/flatly/bootstrap.css" media="screen">
     <link rel="stylesheet" href="static/assets/css/bootswatch.min.css">
     <link rel="stylesheet" href="static/wiki.css">
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+    </script>
+    <script type="text/javascript" src=
+"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
   </head>
   <script>
 
@@ -41,7 +53,7 @@
       <div class="bs-doc-section">
         <div class="row">
           <div class="col-lg-12">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
               <h2 id="nav-breadcrumbs"> Category</h2>
               <div class="bs-component">
                 {% for (category, (dirs, names)) in category_dict.items()  %}
@@ -60,7 +72,7 @@
             </div>
 
             <!-- content -->
-            <div class="col-lg-8">
+            <div class="col-lg-9">
               <div class="bs-component">
                 {{ md_content }}
               </div>
@@ -68,6 +80,38 @@
           </div>
         </div>
       </div>
+
+      <div class="bs-docs-section">
+         <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="dialogs">Reading over...</h1>
+            </div>
+          </div>
+        </div>
+
+         <footer>
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+              <li><a href="http://news.bootswatch.com" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
+              <li><a href="http://feeds.feedburner.com/bootswatch">RSS</a></li>
+              <li><a href="https://twitter.com/bootswatch">Twitter</a></li>
+              <li><a href="https://github.com/thomaspark/bootswatch/">GitHub</a></li>
+              <li><a href="../help/#api">API</a></li>
+              <li><a href="../help/#support">Support</a></li>
+            </ul>
+            <p>Made by <a href="http://thomaspark.co" rel="nofollow">Thomas Park</a>. Contact him at <a href="mailto:thomas@bootswatch.com">thomas@bootswatch.com</a>.</p>
+            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+
+          </div>
+        </div>
+
+      </footer>
     </div>
+
   </body>
 </html>
